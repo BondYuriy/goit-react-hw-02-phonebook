@@ -22,8 +22,13 @@ const ContactList = ({ contacts, onDelete }) =>
   );
 
 ContactList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      number: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
   onDelete: PropTypes.func.isRequired,
 };
 

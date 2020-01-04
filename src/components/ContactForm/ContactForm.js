@@ -32,7 +32,10 @@ export default class ContactForm extends Component {
 
     const { onSubmitContact } = this.props;
 
-    onSubmitContact({ name, number });
+    /* id - только для работы функционала */
+    const id = v4();
+
+    onSubmitContact({ name, number, id });
 
     this.reset();
   };
